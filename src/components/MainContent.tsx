@@ -21,7 +21,7 @@ const MainContent = ({
       <div className="space-x-3 text-right">
        <button onClick={() => window.location.reload()} className="flex items-center">
         <FontAwesomeIcon icon={faSync} className="text-blue-500 mr-3" size="lg" />
-        Refresh
+        Refresh Weather
        </button>
         <button
           onClick={() => updateTempratureUnit("celcius")}
