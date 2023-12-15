@@ -1,3 +1,4 @@
+import React from "react";
 import { Chart, registerables } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { WeatherData } from "../hooks/useWeather";
@@ -12,10 +13,10 @@ interface LineChartProps {
 }
 
 const LineChart = ({ tempratureUnit, error, loading, weeklyWeatherData }: LineChartProps) => {
-  const labels = weeklyWeatherData?.hourly.time.map((time) =>
+  const labels = weeklyWeatherData?.hourly?.time?.map((time) =>
     new Date(time).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", day: '2-digit' })
   ) || [];
-  const temperatureData = weeklyWeatherData?.hourly.temperature_2m || [];
+  const temperatureData = weeklyWeatherData?.hourly?.temperature_2m || [];
   const tempratureSign = tempratureUnit == 'celcius' ? '(°C)' : '(°F)'
 
   const data = {

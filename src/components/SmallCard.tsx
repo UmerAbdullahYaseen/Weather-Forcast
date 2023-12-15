@@ -15,7 +15,7 @@ const SmallCard: React.FC<SmallCardProps> = ({
   temp,
 }) => {
   return (
-    <div className="bg-darkblue py-4 px-5 flex flex-col items-center space-y-4">
+    <div data-testid='small-card-0' className="bg-darkblue py-4 px-5 flex flex-col items-center space-y-4">
       <p>{dayTitle}</p>
       <img src={img} alt="weather-icon" className="max-h-24" />
       <div className="flex justify-between space-x-5">

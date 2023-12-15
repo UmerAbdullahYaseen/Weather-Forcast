@@ -1,3 +1,4 @@
+import React from "react";
 import { wmo_mapper } from "../utils/wmo";
 import SmallCard from "./SmallCard";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,12 +15,19 @@ const MainContent = ({
   tempratureUnit,
   dailyWeatherData,
 }: MainContentProps) => {
+  const reloadPage = () => {
+    window.location.reload();
+  };
+
+
+
+  
   const weatherCodesMapper = wmo_mapper;
 
   return (
     <div className="text-gray-150 p-10 flex-grow">
       <div className="space-x-3 text-right">
-       <button onClick={() => window.location.reload()} className="flex items-center">
+       <button onClick={reloadPage} className="flex items-center">
         <FontAwesomeIcon icon={faSync} className="text-blue-500 mr-3" size="lg" />
         Refresh Weather
        </button>
@@ -44,7 +52,7 @@ const MainContent = ({
           &deg;F
         </button>
       </div>
-      
+
       <div className="my-10">
         <h3 className="text-2xl font-bold mb-5">Weekly Weather</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 justify-center">
@@ -53,14 +61,14 @@ const MainContent = ({
               return (
                 <SmallCard
                   key={index} // Don't forget to add a unique key when mapping in React
-                  dayTitle={dailyWeatherData.maxTemp.time[index]}
+                  dayTitle={dailyWeatherData?.maxTemp?.time[index]}
                   img={
                     weatherCodesMapper[
-                      dailyWeatherData.weatherCode.weather_code[index]
-                    ].day.image
+                      dailyWeatherData?.weatherCode?.weather_code[index]
+                    ]?.day?.image
                   }
-                  max={dailyWeatherData.maxTemp.temperature_2m_max[index]}
-                  min={dailyWeatherData.minTemp.temperature_2m_min[index]}
+                  max={dailyWeatherData.maxTemp?.temperature_2m_max[index]}
+                  min={dailyWeatherData.minTemp?.temperature_2m_min[index]}
                   temp={tempratureUnit == "celcius" ? "C" : "F"}
                 />
               );

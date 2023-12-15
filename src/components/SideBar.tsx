@@ -1,3 +1,4 @@
+import React from "react";
 import { WeatherData } from "../hooks/useWeather";
 import { wmo_mapper } from "../utils/wmo";
 
@@ -10,7 +11,7 @@ interface SideBarProps {
 }
 
 const SideBar = ({
-  
+
   tempratureUnit,
   dailyWeatherData,
 }: SideBarProps) => {
@@ -37,11 +38,11 @@ const SideBar = ({
               src={
                 isDayTime
                   ? weatherCodesMapper[
-                      dailyWeatherData.weatherCode.weather_code[0]
-                    ].day.image
+                      dailyWeatherData?.weatherCode?.weather_code[0]
+                    ]?.day?.image
                   : weatherCodesMapper[
-                      dailyWeatherData.weatherCode.weather_code[0]
-                    ].night.image
+                      dailyWeatherData?.weatherCode?.weather_code[0]
+                    ]?.night?.image
               }
               alt="weather"
               style={{ width: '300px', height: '300px', maxHeight: '500px' }}
@@ -51,7 +52,7 @@ const SideBar = ({
         <div className="flex flex-col items-center justify-evenly flex-grow pt-6">
           <h2 className="text-gray-150 text-3xl font-medium">Today's Weather</h2>
           <h1 className="text-gray-150 text-[144px] font-medium">
-            {dailyWeatherData.maxTemp.temperature_2m_max[0]
+            {dailyWeatherData?.maxTemp?.temperature_2m_max[0]
               ? Math.floor(dailyWeatherData.maxTemp.temperature_2m_max[0])
               : ""}{" "}
             <span className="text-3xl text-gray-250">
@@ -60,10 +61,10 @@ const SideBar = ({
           </h1>
           <h1 className="text-3xl text-gray-250">
           {isDayTime
-              ? weatherCodesMapper[dailyWeatherData.weatherCode.weather_code[0]]
-                  .day.description
-              : weatherCodesMapper[dailyWeatherData.weatherCode.weather_code[0]]
-                  .night.description}
+              ? weatherCodesMapper[dailyWeatherData?.weatherCode?.weather_code[0]]
+                  ?.day.description
+              : weatherCodesMapper[dailyWeatherData?.weatherCode?.weather_code[0]]
+                  ?.night.description}
           </h1>
           <p className="text-gray-350 text-lg">Today &bull; {formatted}</p>
         </div>

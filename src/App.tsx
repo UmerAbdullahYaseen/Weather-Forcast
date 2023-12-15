@@ -1,3 +1,4 @@
+import React from "react";
 import SideBar from "./components/SideBar";
 import MainContent from "./components/MainContent";
 import { useState } from "react";
@@ -16,10 +17,10 @@ const App = () => {
 
   if(!loading && !loadingDaily && !error && !errorDaily) {
     return (
-      <div className="bg-[#100E1D]">
+      <div data-testid="root" className="bg-[#100E1D]">
         <div className="flex flex-col lg:flex-row">
           <SideBar dailyWeatherData={dailyWeatherData} tempratureUnit={tempratureUnit} error={error} loading={loading} weeklyWeatherData={weeklyWeatherData} />
-          <MainContent dailyWeatherData={dailyWeatherData} tempratureUnit={tempratureUnit} updateTempratureUnit={updateTempratureUnit} />
+       <MainContent dailyWeatherData={dailyWeatherData} tempratureUnit={tempratureUnit} updateTempratureUnit={updateTempratureUnit} />
         </div>
         <div className="mt-10 p-5">
           <Chart tempratureUnit={tempratureUnit}  error={error} loading={loading} weeklyWeatherData={weeklyWeatherData} />

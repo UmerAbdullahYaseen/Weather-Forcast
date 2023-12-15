@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+# Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Weather App is a simple React application built using Vite, React.js, TypeScript, and Tailwind.CSS. It allows users to view the current weather and weekly forecast based on their geolocation using the Open Meteo API.
 
-Currently, two official plugins are available:
+## Website Link
+- https://weather-forcast-topaz.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites:
 
-## Expanding the ESLint configuration
+- Node.js (v14 or later) 
+  - Verify Node.js and npm installations:
+    ```bash
+    node -v
+    npm -v
+    ```
+  - Installation instructions:
+    - For Windows: [Download Node.js](https://nodejs.org/en/download/)
+    - For Linux: `sudo apt install Node.js`
+    - For macOS: `brew install node`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation                 
 
-- Configure the top-level `parserOptions` property like this:
+1. Clone the repository:                                            
+   ```bash
+   git clone https://github.com/UmerAbdullahYaseen/Weather-Forcast.git
+   cd your-Weather-Forcast
+2. Install dependencies:
+   ```bash
+   npm install
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Running the App
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Start the development server:
+   ```bash
+   npm run dev
+2. Open your browser and navigate to http://localhost:5173/ to view the Weather App.
+
+3. Test the application:
+   ```bash
+   npm test -- --config=jest.config.cjs
+
+## Features
+- Current Weather: View real-time weather conditions.
+- Hourly Forecast Chart: Visualize hourly temperature trends through an interactive chart.
+- Weekly Forecast: Plan your week with a detailed forecast.
+- Responsive UI: Enjoy a seamless experience on various devices, thanks to the responsive design.
+- Multi-Browser Compatibility: Compatible with popular browsers for a broad user reach.
+- Secure: Prioritize user security with secure API requests and data handling.
+- Maintainable Codebase: Well-structured TypeScript code for ease of maintenance.
+- Scalable Architecture: Built with scalability in mind for future enhancement
+
+## Technologies Used
+
+- React.js
+- Vite
+- TypeScript
+- Tailwind CSS
+- Open Meteo API
